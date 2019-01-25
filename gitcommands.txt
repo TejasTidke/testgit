@@ -1,0 +1,11 @@
+cd / - root repository
+cd xyz/ - xyz repository
+pwd - print working directory
+ls - list contents
+
+Set Up Git:
+git config --global user.name "TejasTidke" 
+git config --global user.email "tejutidke@gmail.com"
+
+git clone (url)
+git add (file names)
