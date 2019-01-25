@@ -9,3 +9,16 @@ git config --global user.email "tejutidke@gmail.com"
 
 git clone (url)
 git add (file names)
+
+git status
+it will show if u have commited for the first time that:
+new file : "filename"
+
+but if u have modified it even after commiting and pushing, it would show something like this:
+modified : "filename"
+
+To give message:
+git commit -m "(committed message)
+
+To transfer files/upload files:
+git push -u origin master
