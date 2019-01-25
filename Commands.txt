@@ -1,0 +1,41 @@
+VIM:
+j k l h to cursor to left-right-top-bottom
+shift+g     to move cursor at the end of the document.
+1)ctrl+c
+2):wq+Enter
+to get out of vim
+
+GIT:
+to clone repository: git clone "content from the clipboard on the website"
+to know the status:  git status
+to add to the master file:  git add "filename"
+to commit changes:  git commit -m "Added section describing how to build project"
+to create a local branch and switch to it:  git checkout -b feature1
+to create a text file:  touch feature1.txt
+to extract file and want that file to be managed by git:  git add feature1.txt
+to push local branch to remote repository for the first time:  git push -u origin feature1
+to point to the master branch:  git checkout master
+to ensure that master branch has all the current changes from the remote repository:  git pull
+to merge:  git merge feature1
+to push local master to remote master:  git push
+
+GIT-gitflow_workflow:
+to create main development code-line: git checkout -b develop
+to make available this repository remotely:   git push -u origin develop
+to make another feature branch: git checkout -b feature2
+follow the same set of commands from making  a .txt file tog push it.
+to integrate feature2 with the main command line i.e. develop:
+1)git checkout develop
+2)git pull
+3)git merge feature2
+4)git push
+now all the release code is present in our release repository i.e. develop
+and we want to integrate it with the dedicated master branch
+1)git checkout master
+2)git pull
+3)git merge develop
+4)git push
+5)git tag "1.0.0.RELEASE" -m "Releasing version 1.0.0"
+6)git push --tags
+tag is the special branch which can be set up to be read-only giving us the certainty
+to always go back to the branch in order to use releasable code.
