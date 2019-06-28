@@ -1,41 +1,187 @@
-VIM:
-j k l h to cursor to left-right-top-bottom
-shift+g     to move cursor at the end of the document.
-1)ctrl+c
-2):wq+Enter
-to get out of vim
+$ find ~ -name *config
+$ git config --global user.name
+$ git config --global user.email "tejutidke@gmail.com"
+$ git config --global --list
+$ git clone "https://github.com/TejasTidke/testgit"
 
-GIT:
-to clone repository: git clone "content from the clipboard on the website"
-to know the status:  git status
-to add to the master file:  git add "filename"
-to commit changes:  git commit -m "Added section describing how to build project"
-to create a local branch and switch to it:  git checkout -b feature1
-to create a text file:  touch feature1.txt
-to extract file and want that file to be managed by git:  git add feature1.txt
-to push local branch to remote repository for the first time:  git push -u origin feature1
-to point to the master branch:  git checkout master
-to ensure that master branch has all the current changes from the remote repository:  git pull
-to merge:  git merge feature1
-to push local master to remote master:  git push
+type cd and press tab  autocomplete
+ls -l   #list with details
+ls -a   #displays hidden file
+ls -al  #disaplys all files with hidden
 
-GIT-gitflow_workflow:
-to create main development code-line: git checkout -b develop
-to make available this repository remotely:   git push -u origin develop
-to make another feature branch: git checkout -b feature2
-follow the same set of commands from making  a .txt file tog push it.
-to integrate feature2 with the main command line i.e. develop:
-1)git checkout develop
-2)git pull
-3)git merge feature2
-4)git push
-now all the release code is present in our release repository i.e. develop
-and we want to integrate it with the dedicated master branch
-1)git checkout master
-2)git pull
-3)git merge develop
-4)git push
-5)git tag "1.0.0.RELEASE" -m "Releasing version 1.0.0"
-6)git push --tags
-tag is the special branch which can be set up to be read-only giving us the certainty
-to always go back to the branch in order to use releasable code.
+$ echo "hgdsfdjkfhjkdhfjds" >> start.txt
+$ cat start.txt
+
+$ git add <filename> start.txt     #The git add command adds a change in the working directory to the staging area.
+				   #tells git to track a file
+
+$ git add <directory>  
+
+$ git status      #list which files are staged, unstaged and untracked
+$ git help pull
+
+$ git commit -m "start.txt added"    #moved from staging area to local repository
+				     #The "commit" command is used to save your changes to
+
+$$ git commit -am "dfjiodfjsiodfhud"    #to add and commit at the same time
+				     #the local repository.
+$ git push origin master      #need not always mention origin master, git push is fine
+			      # The "push" command is used to publish new local commits 
+			      #on a remote server.
+
+
+$ git init "noob"      #making working directory as repository
+
+
+#deleting .git and thus becomes normal directory it's no more repository
+tejas_tidke@TRNG-ML-Pyth38 MINGW64 ~/g8hub/web-project (master)
+$ rm .git/
+rm: cannot remove '.git/': Is a directory
+
+tejas_tidke@TRNG-ML-Pyth38 MINGW64 ~/g8hub/web-project (master)
+$ rm -rf.git/
+rm: unknown option -- .
+Try 'rm --help' for more information.
+
+tejas_tidke@TRNG-ML-Pyth38 MINGW64 ~/g8hub/web-project (master)
+$ rm -rf .git/
+
+tejas_tidke@TRNG-ML-Pyth38 MINGW64 ~/g8hub/web-project
+$ ls -al
+total 1
+drwxr-xr-x 1 tejas_tidke 1049089  0 Jun 25 17:40 ./
+drwxr-xr-x 1 tejas_tidke 1049089  0 Jun 25 17:26 ../
+-rw-r--r-- 1 tejas_tidke 1049089 18 Jun 25 17:26 hahah.txt
+
+tejas_tidke@TRNG-ML-Pyth38 MINGW64 ~/g8hub/web-project
+$ ^C
+
+tejas_tidke@TRNG-ML-Pyth38 MINGW64 ~/g8hub/web-project
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+
+26June
+============================================
+$ history 5     #gives history of commands given in past
+
+
+$ git branch
+
+
+$ git remote add origin "https://github.com/TejasTidke/DEmo_Work.git"
+
+$ git remote -v
+origin  https://github.com/TejasTidke/DEmo_Work.git (fetch)
+origin  https://github.com/TejasTidke/DEmo_Work.git (push)
+
+tejas_tidke@TRNG-ML-Pyth38 MINGW64 ~/g8hub/26june (master)
+$ git push origin master
+Username for 'https://github.com': TejasTidke
+To https://github.com/TejasTidke/DEmo_Work.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/TejasTidke/DEmo_Work.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+tejas_tidke@TRNG-ML-Pyth38 MINGW64 ~/g8hub/26june (master)
+$ git push origin master --force
+Username for 'https://github.com': TejasTidke
+Counting objects: 4, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 5.42 KiB | 1.35 MiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/TejasTidke/DEmo_Work.git
+ + e9e3989...e1cc905 master -> master (forced update)
+
+
+$ git pull origin master  #update the changes in computer memory(local repo) 
+			  #from github repo(remote repo)
+
+tejas_tidke@TRNG-ML-Pyth38 MINGW64 ~/g8hub/26june (master)
+$ git pull origin master
+From https://github.com/TejasTidke/DEmo_Work
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+
+$ git ls-files     #to track files
+
+$git rm <filename>   #to remove files from being tracked
+=========================================================
+
+we have made some changes but not sure what we have made,
+so we compare with what we have in repository.
+To differentiate between working version and commited version
+we use:-----------------------------
+
+$ git diff <filename>				#working vs staging
+
+$ git diff HEAD     #head points to last commit   #last commit(git repo in local) vs working
+
+$git diff --cached    #staging vs last commit(git repo in local)
+
+$ git difftool <filename>     #opens a new window to show difference
+
+$ git diff <commit id1>  <commit id2>  #shows difference between 2 versions in git local repo
+  
+$ git diff --staged HEAD  #staging vs last commit
+
+$ git difftool --staged HEAD
+
+$ git diff HEAD HEAD^    #last commit vs prevoius of last commit
+
+$ git diff origin master     #origin(server) vs master(git repo local)
+
+$ git difftool master title-change		
+
+=========================================
+git log operates only on commited history,
+git status lets us inspect working directory and staging area 
+
+$ git log --oneline   #shows files which are in git repo in local, files which are commited
+
+$ git log --oneline --graph --decorate
+
+==========================================
+git checkout -->
+checks out files
+checks out commits
+checks out branches
+
+$ git chekcout 		#shows the files which are in working directory 
+
+$ git checkout <filename>
+
+$ git checkout master
+ 
+$ git branch -a
+
+$ git branch -m mynewbranch newbranch
+
+$ git branch -d newbranch 
+
+$ git checkout -b "title change"
+
+$ git checkout master
+
+$ git merge title-change
+
+==============================
+
+git reset <filename>   #to unstage the files
+
+git reset HEAD     #last commit(that version) will be deleted
+
+git reset HEAD~2  #deletes last 2 recent commits(version)
+
+git revert HEAD - 
+
+=============================
+git mv originalname modifiedname
+
+Perforce Helix Merge
