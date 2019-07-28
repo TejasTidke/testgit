@@ -30,7 +30,7 @@ $ git push origin master      #need not always mention origin master, git push i
 			      #on a remote server.
 
 
-$ git init "noob"      #making working directory as repository
+$ git init "noob"      #command to track the files on the local machine
 
 
 #deleting .git and thus becomes normal directory it's no more repository
